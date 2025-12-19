@@ -13,10 +13,10 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { Card, CardContent } from "@/components/ui/card";
+//import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, Award, Star } from "lucide-react";
+import { Calendar, Clock,  Star } from "lucide-react";
 
 // Images
 import doc1 from "@/assets/generated_images/professional_female_dermatologist.png";

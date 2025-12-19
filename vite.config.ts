@@ -14,6 +14,7 @@ export default defineConfig({
       "@": path.resolve(import.meta.dirname, "src"),
       "@components": path.resolve(import.meta.dirname, "src/components"),
       "@lib": path.resolve(import.meta.dirname, "src/lib"),
+      "@/hooks": path.resolve(import.meta.dirname, "src/components/hooks"),
     },
   },
 })
