@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { YandexMap } from "@/components/ui/map";
 import { ArrowRight, Star, Shield, Heart, Sparkles } from "lucide-react";
 
 // Asset imports
@@ -185,6 +186,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          <YandexMap />
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-24 bg-neutral-900 text-white relative overflow-hidden">
@@ -204,7 +210,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      
       <Footer />
     </div>
   );
