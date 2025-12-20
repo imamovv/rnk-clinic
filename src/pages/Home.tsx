@@ -35,9 +35,14 @@ export default function Home() {
               Косметология премиум класса
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-              Искусство <br />
-              <span className="text-primary italic font-serif pr-2">естественной</span>
-              красоты
+              <div className="inline-block">
+                Искусство
+              </div>
+              <div className="md:inline-block">
+                <span className="text-primary italic font-serif pr-2">естественной</span>
+                <span className="md:hidden"><br /></span>
+                красоты
+              </div>
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-10 max-w-xl font-light leading-relaxed">
               KILIA CLINIC — это пространство эстетической медицины, где передовые технологии встречаются с заботой о вашей уникальности.

@@ -1,0 +1,66 @@
+.wrapper {
+  text-align: center;
+}
+
+#rk-logo {
+  width: 100px !important;  /* В 2 раза меньше */
+  height: 100px !important;
+}
+
+/* --- Рисование линий --- */
+#circles circle, #flower path {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: draw 2.5s ease forwards; 
+}
+
+#circles circle { 
+  animation-delay: 0.2s; 
+}
+#flower path { 
+  animation-delay: 1s; 
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* --- Базовые стили для вращения --- */
+#flower {
+  transform-origin: 160px 160px;
+  transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* --- При наведении: быстрый разгон --- */
+#rk-logo:hover #flower {
+  transform: rotate(360deg);
+}
+
+/* --- Появление текста --- */
+.brand {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: textfade 1.2s ease forwards 2.2s;
+  font-size: 20px;
+  font-weight: bold;
+  color: #0e5a52;
+}
+
+.sub {
+  opacity: 0;
+  animation: fadeSlow 3s ease forwards 2.2s;
+  font-size: 10px;
+  color: #0e5a52;
+}
+
+@keyframes textfade {
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeSlow {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Phone, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
+import {RKLogo} from '@components/ui/logo';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,12 +41,8 @@ export function Header() {
           {/* Logo */}
           <Link href="/">
             <a className="flex flex-col items-start group">
-              <span className="text-2xl font-bold tracking-widest text-foreground group-hover:text-primary transition-colors">
-                KILIA
-              </span>
-              <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-                Clinic
-              </span>
+              <div><RKLogo /></div>
+                
             </a>
           </Link>
 
