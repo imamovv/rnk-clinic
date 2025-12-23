@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { YandexMap } from "@/components/ui/map";
 import { ArrowRight, Star, Shield, Heart, Sparkles } from "lucide-react";
-
+import { TelegramPostWidget } from '@baranov-guru/react-telegram-widgets';
 // Asset imports
 import heroBg from "@/assets/generated_images/modern_luxury_aesthetic_clinic_reception.png";
 import faceImg from "@/assets/generated_images/woman_with_glowing_skin_close_up.png";
@@ -13,7 +13,14 @@ import injectImg from "@/assets/generated_images/aesthetic_injection_procedure.p
 import laserImg from "@/assets/generated_images/modern_laser_cosmetology_equipment.png";
 
 import { DoctorsSection } from "@/components/sections/DoctorsSection";
-
+import { SmartPost } from "@/components/ui/smartpost";
+const TELEGRAM_POSTS = [
+  "RKclinic/36",
+  "RKclinic/33",
+  "RKclinic/107",
+  "RKclinic/103",
+  "RKclinic/95",
+];
 export default function Home() {
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -215,7 +222,35 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+      {/* <div className="flex"> 
+        <TelegramPostWidget
+          post="RKclinic/36"   // например: mychannel/123
+          width="100%"
+          dark={true}
+        />
+        <TelegramPostWidget
+          post="RKclinic/33"   // например: mychannel/123
+          width="100%"
+          dark={true}
+        />
+        <TelegramPostWidget
+          post="RKclinic/107"   // например: mychannel/123
+          width="100%"
+          dark={true}
+        />
+        <TelegramPostWidget
+          post="RKclinic/103"   // например: mychannel/123
+          width="100%"
+          dark={true}
+        />
+        <TelegramPostWidget
+          post="RKclinic/95"   // например: mychannel/123
+          width="100%"
+          dark={true}
+        />
+      </div> */}
+       <TelegramPostsSection />
+
       <Footer />
     </div>
   );
@@ -249,3 +284,77 @@ function ServiceCard({ image, title, description, link }: { image: string, title
     </Link>
   );
 }
+function TelegramPostsSection() {
+  return (
+    <section className="py-20 bg-secondary/20">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Мы в Telegram
+          </h2>
+          <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-muted-foreground">
+            Подписывайтесь на наш канал, чтобы быть в курсе новостей, акций и полезных советов по уходу за собой.
+          </p>
+        </div>
+
+        <div
+          className="
+            grid gap-8
+            grid-cols-1
+            md:grid-cols-2
+            xl:grid-cols-3
+          "
+        >
+          {TELEGRAM_POSTS.map((post) => (
+            <TelegramPostCardWide key={post} post={post} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+interface TelegramPostCardWideProps {
+  post: string;
+}
+
+const TelegramPostCardWide: React.FC<TelegramPostCardWideProps> = ({ post }) => {
+  return (
+    <div
+      className="
+        flex flex-col 
+        bg-slate-900
+        text-white
+        rounded-2xl
+        overflow-hidden
+        shadow-lg
+        w-full
+        h-[520px]             /* общая высота карточки */
+      "
+    >
+      <div className="h-[460px] overflow-y-auto">
+        <div className="min-h-[460px] flex items-start justify-center">
+          <TelegramPostWidget
+            post={post}
+            width="100%"
+            dark={true}
+          />
+        </div>
+      </div>
+
+      <div className="px-5 py-3 border-t border-slate-800 text-xs text-slate-400 flex justify-between">
+        <span>@RKclinic</span>
+        <a
+          href={`https://t.me/${post}`}
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-primary transition-colors"
+        >
+          Открыть в Telegram →
+        </a>
+      </div>
+    </div>
+  );
+};
+
