@@ -13,6 +13,7 @@ import injectImg from "@/assets/generated_images/aesthetic_injection_procedure.p
 import laserImg from "@/assets/generated_images/modern_laser_cosmetology_equipment.png";
 
 import { DoctorsSection } from "@/components/sections/DoctorsSection";
+
 const TELEGRAM_POSTS = [
   "RKclinic/36",
   "RKclinic/33",
@@ -323,7 +324,7 @@ const TelegramPostCardWide: React.FC<TelegramPostCardWideProps> = ({ post }) => 
     <div
       className="
         flex flex-col 
-        bg-slate-900
+        bg-primary
         text-white
         rounded-2xl
         overflow-hidden
