@@ -13,7 +13,6 @@ import injectImg from "@/assets/generated_images/aesthetic_injection_procedure.p
 import laserImg from "@/assets/generated_images/modern_laser_cosmetology_equipment.png";
 
 import { DoctorsSection } from "@/components/sections/DoctorsSection";
-import { SmartPost } from "@/components/ui/smartpost";
 const TELEGRAM_POSTS = [
   "RKclinic/36",
   "RKclinic/33",

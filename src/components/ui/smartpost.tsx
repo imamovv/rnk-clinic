@@ -19,8 +19,7 @@ const SmartPost: React.FC<SmartPostProps> = ({
     
     if (widget) {
       const container = widget.closest('.telegram-post') || widget.parentElement;
-      const hasBigMediaError = container?.textContent?.includes('media is too big') 
-        || container?.innerText?.includes('media is too big');
+      const hasBigMediaError = container?.textContent?.includes('media is too big')
       
       if (hasBigMediaError) {
         setIsBigMedia(true);
