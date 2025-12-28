@@ -1,7 +1,6 @@
 import { Switch, Route } from 'wouter';
 import './App.css';
 import Home from './pages/Home';
-
 function App() {
   return (
     <div className="App">
@@ -19,7 +18,6 @@ function App() {
         <Route path="/about">
           <h1>About Page</h1>
         </Route>
-        
         {/* Fallback для 404 */}
         <Route>
           <h1>404 - Page Not Found</h1>

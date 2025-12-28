@@ -17,4 +17,14 @@ export default defineConfig({
       "@/hooks": path.resolve(import.meta.dirname, "src/components/hooks"),
     },
   },
+  server: {
+    proxy: {
+      '/yandex-reviews': {
+        target: 'https://yandex.ru',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/yandex-reviews/, '/maps-reviews-widget')
+        // ✅ Используем widget URL — он содержит все 5 отзывов!
+      }
+    }
+  }
 })

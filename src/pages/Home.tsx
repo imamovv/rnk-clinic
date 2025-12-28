@@ -13,6 +13,8 @@ import injectImg from "@/assets/generated_images/aesthetic_injection_procedure.p
 import laserImg from "@/assets/generated_images/modern_laser_cosmetology_equipment.png";
 
 import { DoctorsSection } from "@/components/sections/DoctorsSection";
+import { YandexReviews } from "@/components/ui/yandexreviewwidget";
+
 
 const TELEGRAM_POSTS = [
   "RKclinic/36",
@@ -249,8 +251,10 @@ export default function Home() {
           dark={true}
         />
       </div> */}
+        
        <TelegramPostsSection />
-
+       <YandexReviews />
+        
       <Footer />
     </div>
   );
