@@ -307,7 +307,7 @@ function TelegramPostsSection() {
           </p>
         </div>
 
-        {/* Карусель - ТОЛЬКО один активный пост по центру */}
+        {/* Карусель - ТОЛЬКО один активный пост по центру  */}
         <div className="relative max-w-2xl mx-auto">
           <div className="overflow-hidden rounded-3xl shadow-2xl" 
                style={{ height: '280px sm:320px md:360px lg:420px xl:580px' }}>
