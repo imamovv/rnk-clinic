@@ -315,7 +315,7 @@ function TelegramPostsSection() {
               className="flex transition-transform duration-1000 ease-in-out h-full"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
-              {TELEGRAM_POSTS.map((post, index) => (
+              {TELEGRAM_POSTS.map((post) => (
                 <div
                   key={post}
                   className="w-full flex-shrink-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 h-full"
