@@ -288,36 +288,90 @@ function ServiceCard({ image, title, description, link }: { image: string, title
     </Link>
   );
 }
+
+
+import { useState } from "react";
+
 function TelegramPostsSection() {
+  const [current, setCurrent] = useState(0);
+  const totalPosts = TELEGRAM_POSTS.length;
+
   return (
     <section className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Мы в Telegram
-          </h2>
-          <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Мы в Telegram</h2>
+          <div className="w-16 h-1 bg-primary mx-auto mb-6" />
           <p className="text-muted-foreground">
             Подписывайтесь на наш канал, чтобы быть в курсе новостей, акций и полезных советов по уходу за собой.
           </p>
         </div>
 
-        <div
-          className="
-            grid gap-8
-            grid-cols-1
-            md:grid-cols-2
-            xl:grid-cols-3
-          "
-        >
-          {TELEGRAM_POSTS.map((post) => (
-            <TelegramPostCardWide key={post} post={post} />
-          ))}
+        {/* Карусель - ТОЛЬКО один активный пост по центру */}
+        <div className="relative max-w-2xl mx-auto">
+          <div className="overflow-hidden rounded-3xl shadow-2xl" 
+               style={{ height: '280px sm:320px md:360px lg:420px xl:580px' }}>
+            <div 
+              className="flex transition-transform duration-1000 ease-in-out h-full"
+              style={{ transform: `translateX(-${current * 100}%)` }}
+            >
+              {TELEGRAM_POSTS.map((post, index) => (
+                <div
+                  key={post}
+                  className="w-full flex-shrink-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 h-full"
+                >
+                  <TelegramPostCardWide post={post} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Стрелки */}
+          <button
+            onClick={() => setCurrent((prev) => (prev - 1 + totalPosts) % totalPosts)}
+            className="absolute left-4 top-1/2 -translate-y-1/2 
+                       w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20
+                       bg-background/95 backdrop-blur-xl rounded-3xl shadow-2xl 
+                       hover:bg-primary hover:text-primary-foreground transition-all z-30
+                       flex items-center justify-center text-2xl sm:text-3xl lg:text-4xl font-bold
+                       border-2 border-border/50 hover:border-primary/50 hover:shadow-primary/20"
+          >
+            ‹
+          </button>
+          <button
+            onClick={() => setCurrent((prev) => (prev + 1) % totalPosts)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 
+                       w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20
+                       bg-background/95 backdrop-blur-xl rounded-3xl shadow-2xl 
+                       hover:bg-primary hover:text-primary-foreground transition-all z-30
+                       flex items-center justify-center text-2xl sm:text-3xl lg:text-4xl font-bold
+                       border-2 border-border/50 hover:border-primary/50 hover:shadow-primary/20"
+          >
+            ›
+          </button>
+
+          {/* Точки */}
+          <div className="flex justify-center gap-2 sm:gap-3 mt-8 lg:mt-12">
+            {TELEGRAM_POSTS.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrent(i)}
+                className={`w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 rounded-full transition-all duration-500 shadow-lg ${
+                  current === i 
+                    ? "bg-primary scale-125 shadow-primary/50 ring-2 ring-primary/30" 
+                    : "bg-muted/70 hover:bg-primary/50 hover:scale-110"
+                }`}
+                aria-label={`Пост ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
+
 
 interface TelegramPostCardWideProps {
   post: string;
@@ -328,17 +382,15 @@ const TelegramPostCardWide: React.FC<TelegramPostCardWideProps> = ({ post }) => 
     <div
       className="
         flex flex-col 
-        bg-primary
-        text-white
-        rounded-2xl
-        overflow-hidden
-        shadow-lg
+        bg-primary text-white
+        rounded-2xl overflow-hidden shadow-xl
         w-full
-        h-[520px]             /* общая высота карточки */
+        h-64 sm:h-80 md:h-96 lg:h-[460px] xl:h-[520px]
+        transition-all duration-300
       "
     >
-      <div className="h-[460px] overflow-y-auto">
-        <div className="min-h-[460px] flex items-start justify-center">
+      <div className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-900">
+        <div className="flex items-start justify-center p-2 sm:p-4 h-full">
           <TelegramPostWidget
             post={post}
             width="100%"
@@ -347,13 +399,13 @@ const TelegramPostCardWide: React.FC<TelegramPostCardWideProps> = ({ post }) => 
         </div>
       </div>
 
-      <div className="px-5 py-3 border-t border-slate-800 text-xs text-slate-400 flex justify-between">
-        <span>@RKclinic</span>
+      <div className="px-3 sm:px-4 py-2 sm:py-3 border-t border-slate-700 text-xs sm:text-sm text-slate-300 flex justify-between items-center">
+        <span className="font-medium">@RKclinic</span>
         <a
           href={`https://t.me/${post}`}
           target="_blank"
           rel="noreferrer"
-          className="hover:text-primary transition-colors"
+          className="hover:text-white transition-colors font-medium hover:underline flex items-center gap-1"
         >
           Открыть в Telegram →
         </a>
@@ -361,4 +413,5 @@ const TelegramPostCardWide: React.FC<TelegramPostCardWideProps> = ({ post }) => 
     </div>
   );
 };
+
 
