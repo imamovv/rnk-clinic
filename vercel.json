@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/yandex-reviews/:id",
+      "destination": "https://yandex.ru/maps-reviews-widget/:id"
+    }
+  ]
+}

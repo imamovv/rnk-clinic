@@ -19,9 +19,9 @@ export const useYandexReviews = () => {
       try {
         setLoading(true);
         setError(null);
-        console.log('hay');
+        const widgetID = '43778375610';
         // ✅ Правильный URL с отзывами
-        const response = await fetch(`/yandex-reviews/43778375610?comments`);
+        const response = await fetch(`/yandex-reviews/${widgetID}?comments`);
         if (!response.ok) throw new Error('Fetch failed');
 
         const html = await response.text();
@@ -50,9 +50,8 @@ export const useYandexReviews = () => {
           const rating = stars.length;
 
           // Аватар
-          const avatarEl = commentEl.querySelector('.comment__photo img');
+          const avatarEl = commentEl.querySelector('.comment__header img');
           const avatar = avatarEl?.getAttribute('src') || '';
-          
           parsedReviews.push({
             author,
             date,
