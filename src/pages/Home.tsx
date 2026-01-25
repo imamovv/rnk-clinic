@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { YandexMap } from "@/components/ui/map";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { ArrowRight, Star, Shield, Heart, Sparkles } from "lucide-react";
 import { TelegramPostWidget } from '@baranov-guru/react-telegram-widgets';
 // Asset imports
@@ -45,16 +46,16 @@ export default function Home() {
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
               <div className="inline-block">
-                Искусство
+                Когда восстановление
               </div>
               <div className="md:inline-block">
-                <span className="text-primary italic font-serif pr-2">естественной</span>
+                <span className="text-primary italic font-serif pr-2">становится</span>
                 <span className="md:hidden"><br /></span>
-                красоты
+                искусством
               </div>
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-10 max-w-xl font-light leading-relaxed">
-              KILIA CLINIC — это пространство эстетической медицины, где передовые технологии встречаются с заботой о вашей уникальности.
+              R&K CLINIC — это пространство эстетической медицины, где передовые технологии встречаются с заботой о вашей уникальности.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-14 text-base">
@@ -206,6 +207,95 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Accordion Section */}
+      <section className="py-24 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Полный спектр медицинских услуг</h2>
+            <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
+            <p className="text-muted-foreground">
+              Комплексное обслуживание для вашего здоровья и красоты
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="cosmetology" className="border-b border-border/50 last:border-0">
+                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                  💄 Косметология
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 text-base text-muted-foreground">
+                  Передовые методы эстетической медицины: инъекционные процедуры, лазерные технологии, SMAS-лифтинг, уходовые процедуры и пилинги для сохранения молодости и красоты.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="dermatology" className="border-b border-border/50 last:border-0">
+                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                  🔬 Дерматология
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 text-base text-muted-foreground">
+                  Диагностика и лечение заболеваний кожи, волос и ногтей. Профессиональное лечение акне, экземы, псориаза и других дерматологических проблем.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="traumatology" className="border-b border-border/50 last:border-0">
+                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                  🦴 Травматология
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 text-base text-muted-foreground">
+                  Специализированное лечение травм, переломов, вывихов и повреждений опорно-двигательного аппарата. Современные методы восстановления и реабилитации.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="destructology" className="border-b border-border/50 last:border-0">
+                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                  ✨ Деструстопия
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 text-base text-muted-foreground">
+                  Инновационные методы удаления бородавок, папиллом и других новообразований кожи с использованием современного оборудования.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="neurology" className="border-b border-border/50 last:border-0">
+                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                  🧠 Неврология
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 text-base text-muted-foreground">
+                  Диагностика и лечение заболеваний нервной системы. Помощь при головных болях, невралгии, нарушениях чувствительности и других неврологических расстройствах.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="endocrinology" className="border-b border-border/50 last:border-0">
+                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                  ⚗️ Эндокринология
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 text-base text-muted-foreground">
+                  Лечение заболеваний эндокринной системы: сахарного диабета, заболеваний щитовидной железы, нарушений метаболизма и гормональных расстройств.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="ultrasound" className="border-b border-border/50 last:border-0">
+                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                  🔊 УЗИ диагностика
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 text-base text-muted-foreground">
+                  Современная ультразвуковая диагностика всех органов и систем организма. Высокоточное оборудование позволяет выявить заболевания на ранних стадиях.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="laboratory" className="border-b border-border/50 last:border-0">
+                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                  🧪 Лаборатория (анализы)
+                </AccordionTrigger>
+                <AccordionContent className="pb-4 text-base text-muted-foreground">
+                  Полный спектр лабораторных исследований: клинические анализы, биохимические тесты, анализы на инфекции, гормоны и специализированные исследования.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-neutral-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
@@ -253,7 +343,8 @@ export default function Home() {
       </div> */}
         
        <TelegramPostsSection />
-       <YandexReviews />
+       <div className="container mx-auto px-4"><YandexReviews /></div>
+       
         
       <Footer />
     </div>

@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-6">
             <div className="flex flex-col items-start">
               <span className="text-3xl font-bold tracking-widest text-primary">
-                KILIA
+                R&K
               </span>
               <span className="text-xs tracking-[0.4em] uppercase text-gray-400">
                 Clinic
@@ -62,26 +62,26 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>Москва, ул. Пречистенка,<br />д. 40/2, стр. 1</span>
+                <span>г. Казань ул. Краснококшаяская<br />д. 60, 2 этаж</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
-                <a href="tel:+74951234567" className="hover:text-white transition-colors">+7 (495) 123-45-67</a>
+                <a href="tel:+7179000240" className="hover:text-white transition-colors">+7 (917) 90-02-40</a>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
-                <a href="mailto:info@kiliaclinic.ru" className="hover:text-white transition-colors">info@kiliaclinic.ru</a>
+                <a href="mailto:ranokclinic@icloud.com" className="hover:text-white transition-colors">ranokclinic@icloud.com</a>
               </li>
               <li className="flex items-start gap-3 text-gray-400">
                 <Clock className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>Ежедневно<br />10:00 - 22:00</span>
+                <span>Ежедневно<br />09:00 - 20:00</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
-          <p>© 2025 KILIA CLINIC. Все права защищены.</p>
+          <p>© 2026 R&K Clinic. Все права защищены.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-gray-300">Политика конфиденциальности</a>
             <a href="#" className="hover:text-gray-300">Публичная оферта</a>

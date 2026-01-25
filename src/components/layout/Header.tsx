@@ -1,19 +1,33 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, MapPin, Clock } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, Phone, MapPin, Clock, MessageCircle, Send, MessageSquare } from "lucide-react";
+import { useState, useCallback } from "react";
 import {RKLogo} from '@components/ui/logo';
+
+const NAV_ITEMS = [
+  { label: "Услуги", href: "/services" },
+  { label: "Цены", href: "/prices" },
+  { label: "Врачи", href: "/doctors" },
+  { label: "О клинике", href: "/about" },
+  { label: "Контакты", href: "/contacts" },
+] as const;
+
+const CLINIC_INFO = {
+  phone: "+7 (917) 90-02-40",
+  address: "г. Казань ул. Краснококшаяская 60, 2 этаж",
+  hours: "Ежедневно 10:00 - 22:00",
+  phoneLink: "tel:+71790900240",
+  email : "ranokclinic@icloud.com",
+  telegram: "https://t.me/ranokclinic",
+  whatsapp: "https://wa.me/79179000240",
+  max: "https://max.ranokclinic.ru/"
+} as const;
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const navItems = [
-    { label: "Услуги", href: "/services" },
-    { label: "Цены", href: "/prices" },
-    { label: "Врачи", href: "/doctors" },
-    { label: "О клинике", href: "/about" },
-    { label: "Контакты", href: "/contacts" },
-  ];
+  
+  const toggleMenu = useCallback(() => setIsOpen(prev => !prev), []);
+  const closeMenu = useCallback(() => setIsOpen(false), []);
 
   return (
     <header className="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-sm">
@@ -23,15 +37,26 @@ export function Header() {
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
               <MapPin className="w-3 h-3 text-primary" />
-              Москва, ул. Пречистенка, 40/2с1
+              {CLINIC_INFO.address}
             </span>
             <span className="flex items-center gap-2">
               <Clock className="w-3 h-3 text-primary" />
-              Ежедневно 10:00 - 22:00
+              {CLINIC_INFO.hours}
             </span>
+            <div className="flex items-center gap-3 pl-6 border-l border-border/30">
+              <a href={CLINIC_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" title="WhatsApp">
+                <MessageCircle className="w-3.5 h-3.5" />
+              </a>
+              <a href={CLINIC_INFO.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" title="Telegram">
+                <Send className="w-3.5 h-3.5" />
+              </a>
+              <a href={CLINIC_INFO.max} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" title="MTS Max">
+                <MessageSquare className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
-          <a href="tel:+79990000000" className="hover:text-primary transition-colors">
-            +7 (495) 123-45-67
+          <a href={CLINIC_INFO.phoneLink} className="hover:text-primary transition-colors">
+            {CLINIC_INFO.phone}
           </a>
         </div>
       </div>
@@ -48,7 +73,7 @@ export function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <Link key={item.href} href={item.href}>
                 <a className="text-sm font-medium hover:text-primary transition-colors uppercase tracking-wide">
                   {item.label}
@@ -71,7 +96,7 @@ export function Header() {
           {/* Mobile Menu Toggle */}
           <button
             className="lg:hidden p-2 text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={toggleMenu}
           >
             {isOpen ? <X /> : <Menu />}
           </button>
@@ -82,11 +107,11 @@ export function Header() {
       {isOpen && (
         <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-border shadow-lg animate-in slide-in-from-top-5">
           <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <Link key={item.href} href={item.href}>
                 <a 
                   className="text-lg font-medium py-2 border-b border-border/50"
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeMenu}
                 >
                   {item.label}
                 </a>

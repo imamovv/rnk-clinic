@@ -39,9 +39,9 @@
 /* --- Появление текста --- */
 .brand {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(10px);
   animation: textfade 1.2s ease forwards 2.2s;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   color: #0e5a52;
 }
