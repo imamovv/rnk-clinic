@@ -16,7 +16,6 @@ import laserImg from "@/assets/generated_images/modern_laser_cosmetology_equipme
 import { DoctorsSection } from "@/components/sections/DoctorsSection";
 import { YandexReviews } from "@/components/ui/yandexreviewwidget";
 
-
 const TELEGRAM_POSTS = [
   "RKclinic/36",
   "RKclinic/33",
@@ -37,6 +36,19 @@ export default function Home() {
           style={{ backgroundImage: `url(${heroBg})` }}
         >
           <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+        </div>
+
+        {/* Animated Logo with Shine Line */}
+        <div className="absolute inset-0 z-5 flex flex-col items-center justify-center pointer-events-none">
+          <div className="relative w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 shine-wrapper">
+            <img 
+              src="/rnklogo.svg" 
+              alt="RNK Clinic" 
+              className="w-full h-full object-contain drop-shadow-2xl"
+            />          
+          </div>
+          {/* <div className="brand">R&K CLINIC</div>
+          <div className="sub">Регенеративная медицина и косметология</div> */}
         </div>
 
         <div className="container relative z-10 px-4 text-center md:text-left pt-20">
@@ -176,7 +188,7 @@ export default function Home() {
             </div>
             <div className="lg:w-1/2">
               <span className="text-primary font-medium tracking-widest text-sm uppercase mb-2 block">О клинике</span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Добро пожаловать в <br/>KILIA CLINIC</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Добро пожаловать в <br/>R&K CLINIC</h2>
               <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
                 Наша клиника — это место, где высокие стандарты медицины сочетаются с искусством создания красоты. Мы верим, что каждый человек уникален, и наша задача — подчеркнуть вашу природную красоту, сохранив индивидуальность.
               </p>

@@ -14,7 +14,7 @@ const RKLogo: React.FC = () => {
         width="50" 
         height="50"
       >
-        <g id="circles" stroke="#0e5a52" strokeWidth="6" fill="none">
+        <g id="circles" stroke="#0e5a52" strokeWidth="12" fill="none">
           <circle cx="160" cy="80" r="70"/>
           <circle cx="240" cy="160" r="70"/>
           <circle cx="160" cy="240" r="70"/>
@@ -24,19 +24,19 @@ const RKLogo: React.FC = () => {
         <g id="flower">
           {/* Верхний лепесток */}
           <path d="M160 110 C160 100,135 140,160 160 C160 160,180 140,160 110 Z" 
-                fill="white" stroke="#0e5a52" strokeWidth="8"/>
+                fill="white" stroke="#0e5a52" strokeWidth="10"/>
           
           {/* Правый лепесток */}
           <path d="M210 160 C220 160,180 135,160 160 C160 160,180 180,210 160 Z" 
-                fill="white" stroke="#0e5a52" strokeWidth="8"/>
+                fill="white" stroke="#0e5a52" strokeWidth="10"/>
           
           {/* Нижний лепесток */}
           <path d="M160 210 C160 220,185 180,160 160 C160 160,140 180,160 210 Z" 
-                fill="white" stroke="#0e5a52" strokeWidth="8"/>
+                fill="white" stroke="#0e5a52" strokeWidth="10"/>
           
           {/* Левый лепесток */}
           <path d="M110 160 C100 160,140 185,160 160 C160 160,140 140,110 160 Z" 
-                fill="white" stroke="#0e5a52" strokeWidth="8"/>
+                fill="white" stroke="#0e5a52" strokeWidth="10"/>
         </g>
       </svg>
 

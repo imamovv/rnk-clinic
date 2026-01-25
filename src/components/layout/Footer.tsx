@@ -29,6 +29,7 @@ export function Footer() {
               <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white transition-all text-gray-400">
                 <Twitter className="w-4 h-4" />
               </a>
+
             </div>
           </div>
 

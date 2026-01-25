@@ -50,7 +50,7 @@ export function Header() {
               <a href={CLINIC_INFO.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" title="Telegram">
                 <Send className="w-3.5 h-3.5" />
               </a>
-              <a href={CLINIC_INFO.max} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" title="MTS Max">
+              <a href={CLINIC_INFO.max} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" title="Max">
                 <MessageSquare className="w-3.5 h-3.5" />
               </a>
             </div>

@@ -27,6 +27,58 @@
   }
 }
 
+@keyframes shineLine {
+  0% {
+    stroke-dashoffset: 140;
+  }
+  100% {
+    stroke-dashoffset: -140;
+  }
+}
+
+.shine-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle farthest-side at 50% 50%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 30%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.6) 70%,
+    rgba(255, 255, 255, 0) 100%
+  ) no-repeat;
+  background-size: 180px 180px;
+  animation: shineSlide 5s linear infinite;
+  pointer-events: none;
+  z-index: 10;
+  -webkit-mask-image: url(/rnklogo.svg);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url(/rnklogo.svg);
+  /* mask-size: contain; */
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+
+@keyframes shineSlide {
+  0%   { background-position: -300% -300%; }
+  100% { background-position:  300%  300%; }
+}
+
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
