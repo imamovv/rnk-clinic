@@ -41,7 +41,7 @@ const RKLogo: React.FC = () => {
       </svg>
 
       <div className="brand">R&K CLINIC</div>
-      <div className="sub">Регенеративная медицина и косметология</div>
+      <div className="sub hidden sm:block">Регенеративная медицина и косметология</div>
     </div>
   );
 };
