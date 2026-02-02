@@ -36,9 +36,9 @@ export default function Home() {
         <div className="relative z-10 container mx-auto px-4 pt-24 sm:pt-28 pb-12 sm:pb-16 lg:pt-28 lg:pb-20 min-h-[70svh] sm:min-h-[75svh] lg:min-h-[600px] flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
           {/* Левая колонка — весь контент */}
           <div className="flex-1 flex flex-col justify-center text-left max-w-2xl lg:max-w-none">
-            <div className="relative w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mb-6 lg:mb-8 shine-wrapper shrink-0">
+            {/* <div className="relative w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mb-6 lg:mb-8 shine-wrapper shrink-0">
               <img src="/rnklogo.svg" alt="R&K Clinic" className="w-full h-full object-contain drop-shadow-2xl" />
-            </div>
+            </div> */}
             <span className="inline-block py-1 px-3 mb-4 sm:mb-6 border border-white/30 rounded-full text-xs font-medium tracking-widest text-white uppercase backdrop-blur-sm bg-white/10 w-fit">
               Косметология премиум класса
             </span>

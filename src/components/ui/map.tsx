@@ -1,4 +1,4 @@
-import  { useRef, useMemo, memo } from 'react';
+import  {useMemo, memo } from 'react';
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import { MapPin, ExternalLink } from 'lucide-react';
 
@@ -48,7 +48,7 @@ const PlacemarkComponent = memo(() => (
 PlacemarkComponent.displayName = 'PlacemarkComponent';
 
 const YandexMapComponent = memo(() => {
-  const mapRef = useRef<unknown>(null);
+  //const mapRef = useRef<unknown>(null);
   
   const defaultState = useMemo(() => ({
     center: CLINIC_COORDS,
@@ -73,7 +73,7 @@ const YandexMapComponent = memo(() => {
         >
           <YMaps>
             <Map
-              instanceRef={mapRef}
+              //instanceRef={mapRef}
               defaultState={defaultState}
               width="100%" 
               height="100%"
