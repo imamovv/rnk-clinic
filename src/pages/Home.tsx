@@ -8,7 +8,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 import { ArrowRight, Star, Shield, Heart, Sparkles } from "lucide-react";
 import { TelegramPostWidget } from '@baranov-guru/react-telegram-widgets';
 // Asset imports
-import heroBg from "@/assets/generated_images/modern_luxury_aesthetic_clinic_reception.png";
+import aboutImg from "@/assets/generated_images/modern_luxury_aesthetic_clinic_reception.png";
 import faceImg from "@/assets/generated_images/woman_with_glowing_skin_close_up.png";
 import injectImg from "@/assets/generated_images/aesthetic_injection_procedure.png";
 import laserImg from "@/assets/generated_images/modern_laser_cosmetology_equipment.png";
@@ -28,62 +28,57 @@ export default function Home() {
     <div className="min-h-screen bg-background font-sans">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transform scale-105 animate-in fade-in duration-1000"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        >
-          <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
-        </div>
+      {/* Hero Section: описание слева, видео справа, шелковый фон */}
+      <section className="relative min-h-[70svh] sm:min-h-[75svh] lg:min-h-[600px] overflow-hidden">
+        {/* Шелковый/переливающийся фон */}
+        <div className="absolute inset-0 z-0 hero-silky-bg" />
 
-        {/* Animated Logo with Shine Line */}
-        <div className="absolute inset-0 z-5 flex flex-col items-center justify-center pointer-events-none">
-          <div className="relative w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 shine-wrapper">
-            <img 
-              src="/rnklogo.svg" 
-              alt="RNK Clinic" 
-              className="w-full h-full object-contain drop-shadow-2xl"
-            />          
-          </div>
-          {/* <div className="brand">R&K CLINIC</div>
-          <div className="sub">Регенеративная медицина и косметология</div> */}
-        </div>
-
-        <div className="container relative z-10 px-4 text-center md:text-left pt-20">
-          <div className="max-w-3xl animate-in slide-in-from-bottom-10 duration-700 fade-in">
-            <span className="inline-block py-1 px-3 mb-6 border border-white/30 rounded-full text-xs font-medium tracking-widest text-white uppercase backdrop-blur-sm bg-white/10">
+        <div className="relative z-10 container mx-auto px-4 pt-24 sm:pt-28 pb-12 sm:pb-16 lg:pt-28 lg:pb-20 min-h-[70svh] sm:min-h-[75svh] lg:min-h-[600px] flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
+          {/* Левая колонка — весь контент */}
+          <div className="flex-1 flex flex-col justify-center text-left max-w-2xl lg:max-w-none">
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mb-6 lg:mb-8 shine-wrapper shrink-0">
+              <img src="/rnklogo.svg" alt="R&K Clinic" className="w-full h-full object-contain drop-shadow-2xl" />
+            </div>
+            <span className="inline-block py-1 px-3 mb-4 sm:mb-6 border border-white/30 rounded-full text-xs font-medium tracking-widest text-white uppercase backdrop-blur-sm bg-white/10 w-fit">
               Косметология премиум класса
             </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
-              <div className="inline-block">
-                Когда восстановление
-              </div>
-              <div className="md:inline-block">
-                <span className="text-primary italic font-serif pr-2">становится</span>
-                <span className="md:hidden"><br /></span>
-                искусством
-              </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6">
+              <span className="block">Когда восстановление</span>
+              <span className="text-[hsl(180,45%,80%)] italic font-serif">становится</span> искусством
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-10 max-w-xl font-light leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-white/90 mb-6 sm:mb-10 max-w-xl font-light leading-relaxed">
               R&K CLINIC — это пространство эстетической медицины, где передовые технологии встречаются с заботой о вашей уникальности.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-14 text-base">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base transition-colors duration-300">
                 Записаться на прием
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black rounded-full px-8 h-14 text-base backdrop-blur-sm bg-white/5">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black rounded-full px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base backdrop-blur-sm bg-white/5 transition-colors duration-300">
                 Наши услуги
               </Button>
+            </div>
+          </div>
+
+          {/* Правая колонка — видео с размытыми краями */}
+          <div className="flex-shrink-0 w-full lg:w-[45%] xl:w-[48%] mt-8 lg:mt-0 flex items-center justify-center">
+            <div className="relative w-full max-w-lg mx-auto aspect-[4/3] lg:aspect-[3/4] lg:max-w-none overflow-hidden rounded-2xl hero-video-blur-edge">
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                src="/movie_1.mp4"
+                muted
+                loop
+                autoPlay
+                playsInline
+                aria-label="Видео о клинике"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Bar */}
-      <section className="py-12 bg-white border-b border-gray-100 relative z-20 -mt-8 mx-4 md:mx-auto md:max-w-6xl rounded-xl shadow-lg">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-8">
+      <section className="py-8 sm:py-10 md:py-12 bg-white border-b border-border relative z-20 -mt-4 sm:-mt-6 md:-mt-8 mx-3 sm:mx-4 md:mx-auto md:max-w-6xl rounded-2xl shadow-lg transition-smooth">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 px-4 sm:px-6 md:px-8">
           <div className="flex items-start gap-4">
             <div className="p-3 bg-primary/10 rounded-full text-primary">
               <Star className="w-6 h-6" />
@@ -115,17 +110,17 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-12 sm:py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Наши услуги</h2>
-            <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-muted-foreground">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Наши услуги</h2>
+            <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-primary mx-auto mb-4 sm:mb-6"></div>
+            <p className="text-muted-foreground text-sm sm:text-base">
               Мы предлагаем полный спектр процедур для сохранения молодости и красоты вашего лица и тела
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {/* Service Card 1 */}
             <ServiceCard 
               image={injectImg}
@@ -151,7 +146,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-8 sm:mt-12">
             <Link href="/services">
               <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white px-8 rounded-full">
                 Посмотреть все услуги
@@ -165,14 +160,14 @@ export default function Home() {
       <DoctorsSection />
 
       {/* About Section */}
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-16">
             <div className="lg:w-1/2 relative">
               <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
               <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
               <img 
-                src={heroBg} 
+                src={aboutImg} 
                 alt="Interior" 
                 className="relative rounded-2xl shadow-2xl w-full aspect-[4/3] object-cover"
               />
@@ -188,8 +183,8 @@ export default function Home() {
             </div>
             <div className="lg:w-1/2">
               <span className="text-primary font-medium tracking-widest text-sm uppercase mb-2 block">О клинике</span>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Добро пожаловать в <br/>R&K CLINIC</h2>
-              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Добро пожаловать в <br/>R&K CLINIC</h2>
+              <p className="text-muted-foreground text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
                 Наша клиника — это место, где высокие стандарты медицины сочетаются с искусством создания красоты. Мы верим, что каждый человек уникален, и наша задача — подчеркнуть вашу природную красоту, сохранив индивидуальность.
               </p>
               <ul className="space-y-4 mb-8">
@@ -213,19 +208,19 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="py-24 bg-white overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
           <YandexMap />
         </div>
       </section>
 
       {/* Services Accordion Section */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-12 sm:py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Полный спектр медицинских услуг</h2>
-            <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-muted-foreground">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Полный спектр медицинских услуг</h2>
+            <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-primary mx-auto mb-4 sm:mb-6"></div>
+            <p className="text-muted-foreground text-sm sm:text-base">
               Комплексное обслуживание для вашего здоровья и красоты
             </p>
           </div>
@@ -233,7 +228,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="cosmetology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
                   💄 Косметология
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-base text-muted-foreground">
@@ -242,7 +237,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="dermatology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
                   🔬 Дерматология
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-base text-muted-foreground">
@@ -251,7 +246,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="traumatology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
                   🦴 Травматология
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-base text-muted-foreground">
@@ -260,7 +255,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="destructology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
                   ✨ Деструстопия
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-base text-muted-foreground">
@@ -269,7 +264,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="neurology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
                   🧠 Неврология
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-base text-muted-foreground">
@@ -278,7 +273,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="endocrinology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
                   ⚗️ Эндокринология
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-base text-muted-foreground">
@@ -287,7 +282,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="ultrasound" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
                   🔊 УЗИ диагностика
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-base text-muted-foreground">
@@ -296,7 +291,7 @@ export default function Home() {
               </AccordionItem>
 
               <AccordionItem value="laboratory" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-4 text-lg font-semibold text-foreground hover:text-primary transition-colors data-[state=open]:text-primary">
+                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
                   🧪 Лаборатория (анализы)
                 </AccordionTrigger>
                 <AccordionContent className="pb-4 text-base text-muted-foreground">
@@ -309,18 +304,18 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-neutral-900 text-white relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-24 bg-neutral-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">Готовы к преображению?</h2>
-          <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 font-serif">Готовы к преображению?</h2>
+          <p className="text-gray-300 text-sm sm:text-base lg:text-lg mb-6 sm:mb-10 max-w-2xl mx-auto">
             Запишитесь на первичную консультацию, и наши специалисты составят для вас индивидуальный план процедур.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-10 h-14 text-base">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base transition-colors duration-300">
               Записаться онлайн
             </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-black rounded-full px-10 h-14 text-base backdrop-blur-sm">
+            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-black rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base backdrop-blur-sm transition-colors duration-300">
               Заказать звонок
             </Button>
           </div>
@@ -367,23 +362,23 @@ function ServiceCard({ image, title, description, link }: { image: string, title
   return (
     <Link href={link}>
       <a className="group block">
-        <Card className="overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300 h-full">
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
+        <Card className="overflow-hidden border-none shadow-md hover:shadow-xl rounded-2xl transition-all duration-300 h-full">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-t-2xl">
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300 z-10"></div>
             <img 
               src={image} 
               alt={title} 
-              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <CardContent className="p-6">
-            <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{title}</h3>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+          <CardContent className="p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 group-hover:text-primary transition-colors duration-300">{title}</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-3">
               {description}
             </p>
             <span className="text-primary text-sm font-medium flex items-center group/btn">
               Подробнее
-              <ArrowRight className="w-4 h-4 ml-1 transform group-hover/btn:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 ml-1 transform group-hover/btn:translate-x-1 transition-transform duration-300" />
             </span>
           </CardContent>
         </Card>
@@ -400,28 +395,27 @@ function TelegramPostsSection() {
   const totalPosts = TELEGRAM_POSTS.length;
 
   return (
-    <section className="py-20 bg-secondary/20">
+    <section className="py-12 sm:py-16 lg:py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Мы в Telegram</h2>
-          <div className="w-16 h-1 bg-primary mx-auto mb-6" />
-          <p className="text-muted-foreground">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Мы в Telegram</h2>
+          <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-primary mx-auto mb-4 sm:mb-6" />
+          <p className="text-muted-foreground text-sm sm:text-base">
             Подписывайтесь на наш канал, чтобы быть в курсе новостей, акций и полезных советов по уходу за собой.
           </p>
         </div>
 
-        {/* Карусель - ТОЛЬКО один активный пост по центру  */}
+        {/* Карусель — фиксированная высота на всех экранах (не уменьшается при сужении) */}
         <div className="relative max-w-2xl mx-auto">
-          <div className="overflow-hidden rounded-3xl shadow-2xl" 
-               style={{ height: '280px sm:320px md:360px lg:420px xl:580px' }}>
+          <div className="overflow-hidden rounded-2xl shadow-xl border border-border bg-card h-[420px] min-h-[420px]">
             <div 
-              className="flex transition-transform duration-1000 ease-in-out h-full"
+              className="flex transition-transform duration-500 ease-out h-full"
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
               {TELEGRAM_POSTS.map((post) => (
                 <div
                   key={post}
-                  className="w-full flex-shrink-0 flex items-center justify-center p-4 sm:p-6 lg:p-8 h-full"
+                  className="w-full flex-shrink-0 flex items-stretch justify-center p-4 sm:p-6 h-full min-w-0"
                 >
                   <TelegramPostCardWide post={post} />
                 </div>
@@ -429,40 +423,40 @@ function TelegramPostsSection() {
             </div>
           </div>
 
-          {/* Стрелки */}
+          {/* Стрелки — компактнее на мобиле */}
           <button
             onClick={() => setCurrent((prev) => (prev - 1 + totalPosts) % totalPosts)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 
-                       w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20
-                       bg-background/95 backdrop-blur-xl rounded-3xl shadow-2xl 
-                       hover:bg-primary hover:text-primary-foreground transition-all z-30
-                       flex items-center justify-center text-2xl sm:text-3xl lg:text-4xl font-bold
-                       border-2 border-border/50 hover:border-primary/50 hover:shadow-primary/20"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 
+                       w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16
+                       bg-background/95 backdrop-blur-xl rounded-2xl shadow-lg 
+                       hover:bg-primary hover:text-primary-foreground transition-colors duration-300 z-30
+                       flex items-center justify-center text-xl sm:text-2xl lg:text-3xl font-bold
+                       border border-border/50 hover:border-primary/50"
           >
             ‹
           </button>
           <button
             onClick={() => setCurrent((prev) => (prev + 1) % totalPosts)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 
-                       w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20
-                       bg-background/95 backdrop-blur-xl rounded-3xl shadow-2xl 
-                       hover:bg-primary hover:text-primary-foreground transition-all z-30
-                       flex items-center justify-center text-2xl sm:text-3xl lg:text-4xl font-bold
-                       border-2 border-border/50 hover:border-primary/50 hover:shadow-primary/20"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 
+                       w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16
+                       bg-background/95 backdrop-blur-xl rounded-2xl shadow-lg 
+                       hover:bg-primary hover:text-primary-foreground transition-colors duration-300 z-30
+                       flex items-center justify-center text-xl sm:text-2xl lg:text-3xl font-bold
+                       border border-border/50 hover:border-primary/50"
           >
             ›
           </button>
 
           {/* Точки */}
-          <div className="flex justify-center gap-2 sm:gap-3 mt-8 lg:mt-12">
+          <div className="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 lg:mt-10">
             {TELEGRAM_POSTS.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 rounded-full transition-all duration-500 shadow-lg ${
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 rounded-full transition-all duration-300 ${
                   current === i 
-                    ? "bg-primary scale-125 shadow-primary/50 ring-2 ring-primary/30" 
-                    : "bg-muted/70 hover:bg-primary/50 hover:scale-110"
+                    ? "bg-primary scale-125 ring-2 ring-primary/30" 
+                    : "bg-muted/70 hover:bg-primary/50"
                 }`}
                 aria-label={`Пост ${i + 1}`}
               />
@@ -482,33 +476,21 @@ interface TelegramPostCardWideProps {
 
 const TelegramPostCardWide: React.FC<TelegramPostCardWideProps> = ({ post }) => {
   return (
-    <div
-      className="
-        flex flex-col 
-        bg-primary text-white
-        rounded-2xl overflow-hidden shadow-xl
-        w-full
-        h-64 sm:h-80 md:h-96 lg:h-[460px] xl:h-[520px]
-        transition-all duration-300
-      "
-    >
-      <div className="flex-1 min-h-0 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-900">
-        <div className="flex items-start justify-center p-2 sm:p-4 h-full">
-          <TelegramPostWidget
-            post={post}
-            width="100%"
-            dark={true}
-          />
+    <div className="flex flex-col bg-primary text-white rounded-xl overflow-hidden w-full h-full min-h-0 transition-all duration-300 border border-white/10">
+      {/* Область поста — фиксированная высота за счёт родителя, скролл при переполнении */}
+      <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent">
+        <div className="flex items-start justify-center p-2 sm:p-4 min-h-full [&_iframe]:max-w-full">
+          <TelegramPostWidget post={post} width="100%" dark={true} />
         </div>
       </div>
-
-      <div className="px-3 sm:px-4 py-2 sm:py-3 border-t border-slate-700 text-xs sm:text-sm text-slate-300 flex justify-between items-center">
-        <span className="font-medium">@RKclinic</span>
+      {/* Подвал карточки */}
+      <div className="shrink-0 px-3 sm:px-4 py-2.5 sm:py-3 border-t border-white/20 text-xs sm:text-sm text-white/90 flex justify-between items-center gap-2 bg-primary/95">
+        <span className="font-medium truncate">@RKclinic</span>
         <a
           href={`https://t.me/${post}`}
           target="_blank"
           rel="noreferrer"
-          className="hover:text-white transition-colors font-medium hover:underline flex items-center gap-1"
+          className="shrink-0 hover:text-white transition-colors font-medium hover:underline flex items-center gap-1"
         >
           Открыть в Telegram →
         </a>

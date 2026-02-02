@@ -4,119 +4,219 @@
 @custom-variant dark (&:is(.dark *));
 
 @font-face {
-  font-family: "Unbounded";
-  src: url("/fonts/Unbounded-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Unbounded";
+    src: url("/fonts/Unbounded-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-  font-family: "Unbounded";
-  src: url("/fonts/Unbounded-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+    font-family: "Unbounded";
+    src: url("/fonts/Unbounded-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 @theme inline {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-  
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  
-  --font-sans: 'Unbounded', sans-serif;
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+    --color-card: hsl(var(--card));
+    --color-card-foreground: hsl(var(--card-foreground));
+    --color-popover: hsl(var(--popover));
+    --color-popover-foreground: hsl(var(--popover-foreground));
+    --color-primary: hsl(var(--primary));
+    --color-primary-foreground: hsl(var(--primary-foreground));
+    --color-secondary: hsl(var(--secondary));
+    --color-secondary-foreground: hsl(var(--secondary-foreground));
+    --color-muted: hsl(var(--muted));
+    --color-muted-foreground: hsl(var(--muted-foreground));
+    --color-accent: hsl(var(--accent));
+    --color-accent-foreground: hsl(var(--accent-foreground));
+    --color-destructive: hsl(var(--destructive));
+    --color-destructive-foreground: hsl(var(--destructive-foreground));
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+
+    --font-sans: "Unbounded", sans-serif;
 }
 
 :root {
-  /* Elegant Medical Theme - White/Gold/Dark Grey */
-  --background: 0 0% 100%; /* White */
-  --foreground: 220 10% 20%; /* Dark Grey */
+    /* Elegant Medical Theme - White/Gold/Dark Grey */
+    --background: 0 0% 100%; /* White */
+    --foreground: 220 10% 20%; /* Dark Grey */
 
-  --card: 0 0% 100%;
-  --card-foreground: 220 10% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 20%;
 
-  --popover: 0 0% 100%;
-  --popover-foreground: 220 10% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 20%;
 
-  /* Deep Teal/Emerald for Primary (#065353) -> ~180 87% 17% */
-  --primary: 180 87% 17%; 
-  --primary-foreground: 0 0% 100%;
+    /* Deep Teal/Emerald for Primary (#065353) -> ~180 87% 17% */
+    --primary: 180 87% 17%;
+    --primary-foreground: 0 0% 100%;
 
-  /* Soft Grey for Secondary */
-  --secondary: 220 10% 96%;
-  --secondary-foreground: 220 10% 20%;
+    /* Soft Grey for Secondary */
+    --secondary: 220 10% 96%;
+    --secondary-foreground: 220 10% 20%;
 
-  --muted: 220 10% 96%;
-  --muted-foreground: 220 10% 45%;
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 45%;
 
-  --accent: 180 30% 95%; /* Very light teal for hover */
-  --accent-foreground: 180 87% 17%;
+    --accent: 180 30% 95%; /* Very light teal for hover */
+    --accent-foreground: 180 87% 17%;
 
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-  --border: 220 10% 90%;
-  --input: 220 10% 90%;
-  --ring: 180 87% 17%;
+    --border: 220 10% 90%;
+    --input: 220 10% 90%;
+    --ring: 180 87% 17%;
 
-  --radius: 0.25rem;
+    --radius: 0.25rem;
+    /* Единые длительности для анимаций и переходов */
+    --transition-fast: 200ms;
+    --transition-base: 300ms;
+    --transition-smooth: 500ms;
+    --transition-slow: 700ms;
+    --radius-card: 1rem; /* 16px - карточки, блоки */
+    --radius-button: 9999px; /* pill для кнопок */
 }
 
 .dark {
-  /* Dark Mode - Deep Grey/Gold */
-  --background: 220 10% 10%;
-  --foreground: 0 0% 98%;
+    /* Dark Mode - Deep Grey/Gold */
+    --background: 220 10% 10%;
+    --foreground: 0 0% 98%;
 
-  --card: 220 10% 12%;
-  --card-foreground: 0 0% 98%;
+    --card: 220 10% 12%;
+    --card-foreground: 0 0% 98%;
 
-  --popover: 220 10% 12%;
-  --popover-foreground: 0 0% 98%;
+    --popover: 220 10% 12%;
+    --popover-foreground: 0 0% 98%;
 
-  --primary: 180 87% 17%;
-  --primary-foreground: 0 0% 100%;
+    --primary: 180 87% 17%;
+    --primary-foreground: 0 0% 100%;
 
-  --secondary: 220 10% 16%;
-  --secondary-foreground: 0 0% 98%;
+    --secondary: 220 10% 16%;
+    --secondary-foreground: 0 0% 98%;
 
-  --muted: 220 10% 16%;
-  --muted-foreground: 220 10% 60%;
+    --muted: 220 10% 16%;
+    --muted-foreground: 220 10% 60%;
 
-  --accent: 180 30% 20%;
-  --accent-foreground: 0 0% 98%;
+    --accent: 180 30% 20%;
+    --accent-foreground: 0 0% 98%;
 
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
 
-  --border: 220 10% 20%;
-  --input: 220 10% 20%;
-  --ring: 180 87% 17%;
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 180 87% 17%;
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply font-sans antialiased bg-background text-foreground;
-  }
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply font-sans antialiased bg-background text-foreground;
+    }
+}
+
+/* Hero: шелковый/переливающийся фон в стилистике сайта */
+.hero-silky-bg {
+    background: linear-gradient(
+        135deg,
+        hsl(180 87% 12%) 0%,
+        hsl(180 50% 18%) 25%,
+        hsl(190 40% 22%) 50%,
+        hsl(180 45% 16%) 75%,
+        hsl(180 87% 14%) 100%
+    );
+    background-size: 200% 200%;
+    animation: hero-shimmer 12s ease-in-out infinite;
+}
+.hero-silky-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse 80% 50% at 70% 50%,
+        hsl(180 30% 25% / 0.4) 0%,
+        transparent 60%
+    );
+    pointer-events: none;
+}
+.hero-silky-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        hsl(180 87% 10% / 0.3) 100%
+    );
+    pointer-events: none;
+}
+@keyframes hero-shimmer {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Размытые края видео в Hero */
+.hero-video-blur-edge {
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+}
+@media (max-width: 1023px) {
+    .hero-video-blur-edge {
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%
+        );
+    }
+}
+
+/* Единые переходы для интерактивных элементов */
+@layer utilities {
+    .transition-smooth {
+        transition-duration: var(--transition-base);
+        transition-timing-function: ease-in-out;
+    }
+    .transition-smooth-slow {
+        transition-duration: var(--transition-smooth);
+        transition-timing-function: ease-in-out;
+    }
 }

@@ -43,21 +43,23 @@ export function Header() {
               <Clock className="w-3 h-3 text-primary" />
               {CLINIC_INFO.hours}
             </span>
-            <div className="flex items-center gap-3 pl-6 border-l border-border/30">
-              <a href={CLINIC_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" title="WhatsApp">
-                <MessageCircle className="w-3.5 h-3.5" />
+          </div>
+          <div className="flex items-center gap-4">
+            <a href={CLINIC_INFO.phoneLink} className="hover:text-primary transition-colors font-medium">
+              {CLINIC_INFO.phone}
+            </a>
+            <div className="flex items-center gap-2.5 pl-4 border-l border-border/40">
+              <a href={CLINIC_INFO.telegram} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors" title="Telegram">
+                <Send className="w-4 h-4" />
               </a>
-              <a href={CLINIC_INFO.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" title="Telegram">
-                <Send className="w-3.5 h-3.5" />
+              <a href={CLINIC_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors" title="WhatsApp">
+                <MessageCircle className="w-4 h-4" />
               </a>
-              <a href={CLINIC_INFO.max} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors" title="Max">
-                <MessageSquare className="w-3.5 h-3.5" />
+              <a href={CLINIC_INFO.max} target="_blank" rel="noopener noreferrer" className="p-1.5 rounded-lg hover:bg-primary/10 hover:text-primary transition-colors" title="Max">
+                <MessageSquare className="w-4 h-4" />
               </a>
             </div>
           </div>
-          <a href={CLINIC_INFO.phoneLink} className="hover:text-primary transition-colors">
-            {CLINIC_INFO.phone}
-          </a>
         </div>
       </div>
 
@@ -93,13 +95,25 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <button
-            className="lg:hidden p-2 text-foreground"
-            onClick={toggleMenu}
-          >
-            {isOpen ? <X /> : <Menu />}
-          </button>
+          {/* Мобильная полоса: иконки мессенджеров + меню */}
+          <div className="flex lg:hidden items-center gap-1 sm:gap-2">
+            <a href={CLINIC_INFO.telegram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors" title="Telegram" aria-label="Telegram">
+              <Send className="w-5 h-5" />
+            </a>
+            <a href={CLINIC_INFO.whatsapp} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors" title="WhatsApp" aria-label="WhatsApp">
+              <MessageCircle className="w-5 h-5" />
+            </a>
+            <a href={CLINIC_INFO.max} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg hover:bg-primary/10 text-muted-foreground hover:text-primary transition-colors" title="Max" aria-label="Max">
+              <MessageSquare className="w-5 h-5" />
+            </a>
+            <button
+              className="p-2 text-foreground rounded-lg hover:bg-primary/10 transition-colors"
+              onClick={toggleMenu}
+              aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
         </div>
       </div>
 

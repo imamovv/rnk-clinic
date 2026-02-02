@@ -130,21 +130,21 @@ export function DoctorsSection() {
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 bg-background relative overflow-hidden">
        {/* Background Decoration */}
        <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary/20 skew-x-12 transform translate-x-1/2 -z-10"></div>
        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
 
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-8 sm:mb-12">
           <div className="max-w-2xl">
             <span className="text-primary font-medium tracking-widest text-sm uppercase mb-2 block animate-in slide-in-from-left-5 fade-in duration-500">
               Наши специалисты
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 font-serif">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 font-serif">
               Команда <span className="text-primary italic">профессионалов</span>
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-base sm:text-lg">
               Врачи высшей категории, постоянно повышающие свою квалификацию в лучших клиниках мира.
             </p>
           </div>
@@ -169,8 +169,8 @@ export function DoctorsSection() {
                     className="group relative h-full cursor-pointer"
                     onClick={() => setSelectedDoctor(doctor)}
                   >
-                    <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-4">
-                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col justify-end p-6">
+                    <div className="relative overflow-hidden rounded-2xl aspect-[3/4] mb-3 sm:mb-4">
+                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex flex-col justify-end p-4 sm:p-6">
                           <span className="text-white text-sm font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                             Подробнее
                           </span>
@@ -183,10 +183,10 @@ export function DoctorsSection() {
                     </div>
                     
                     <div className="text-center md:text-left">
-                      <h3 className="text-xl font-bold group-hover:text-primary transition-colors duration-300">
+                      <h3 className="text-lg sm:text-xl font-bold group-hover:text-primary transition-colors duration-300">
                         {doctor.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground font-medium uppercase tracking-wider mb-2">
+                      <p className="text-xs sm:text-sm text-muted-foreground font-medium uppercase tracking-wider mb-1 sm:mb-2">
                         {doctor.role}
                       </p>
                     </div>
@@ -202,10 +202,10 @@ export function DoctorsSection() {
         </Carousel>
 
         <Dialog open={!!selectedDoctor} onOpenChange={(open) => !open && setSelectedDoctor(null)}>
-          <DialogContent className="max-w-3xl p-0 overflow-hidden border-none bg-white">
+          <DialogContent className="max-w-3xl w-[95vw] sm:w-full p-0 overflow-hidden rounded-2xl border border-border bg-white shadow-xl">
             {selectedDoctor && (
-              <div className="flex flex-col md:flex-row h-full">
-                <div className="md:w-2/5 relative h-64 md:h-auto">
+              <div className="flex flex-col md:flex-row h-full max-h-[90vh] overflow-auto">
+                <div className="md:w-2/5 relative h-56 sm:h-64 md:h-auto md:min-h-[400px]">
                   <img
                     src={selectedDoctor.image}
                     alt={selectedDoctor.name}
@@ -214,7 +214,7 @@ export function DoctorsSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:hidden"></div>
                 </div>
                 
-                <div className="md:w-3/5 p-6 md:p-10 flex flex-col justify-center">
+                <div className="md:w-3/5 p-4 sm:p-6 md:p-10 flex flex-col justify-center">
                   <DialogHeader className="mb-6">
                     <div className="flex items-center gap-2 mb-2">
                        <Badge variant="outline" className="border-primary text-primary hover:bg-primary/10">
@@ -268,7 +268,7 @@ export function DoctorsSection() {
                       </ul>
                     </div>
 
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-white rounded-full h-12 text-lg">
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-white rounded-full h-11 sm:h-12 text-base sm:text-lg transition-colors duration-300">
                       Записаться на прием
                     </Button>
                   </div>

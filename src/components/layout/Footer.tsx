@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="bg-neutral-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-8 sm:mb-12">
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex flex-col items-start">
@@ -35,8 +35,8 @@ export function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="text-lg font-medium mb-6 text-white">Меню</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 text-white">Меню</h3>
+            <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base">
               <li><Link href="/services"><a className="text-gray-400 hover:text-primary transition-colors">Услуги</a></Link></li>
               <li><Link href="/doctors"><a className="text-gray-400 hover:text-primary transition-colors">Специалисты</a></Link></li>
               <li><Link href="/prices"><a className="text-gray-400 hover:text-primary transition-colors">Прайс-лист</a></Link></li>
@@ -47,8 +47,8 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-medium mb-6 text-white">Направления</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 text-white">Направления</h3>
+            <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base">
               <li><Link href="/services/injectables"><a className="text-gray-400 hover:text-primary transition-colors">Инъекционная косметология</a></Link></li>
               <li><Link href="/services/laser"><a className="text-gray-400 hover:text-primary transition-colors">Лазерная косметология</a></Link></li>
               <li><Link href="/services/body"><a className="text-gray-400 hover:text-primary transition-colors">Коррекция фигуры</a></Link></li>
@@ -59,8 +59,8 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-medium mb-6 text-white">Контакты</h3>
-            <ul className="space-y-4">
+            <h3 className="text-base sm:text-lg font-medium mb-4 sm:mb-6 text-white">Контакты</h3>
+            <ul className="space-y-3 sm:space-y-4 text-sm sm:text-base">
               <li className="flex items-start gap-3 text-gray-400">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span>г. Казань ул. Краснококшаяская<br />д. 60, 2 этаж</span>
@@ -81,9 +81,9 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <div className="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-xs sm:text-sm text-gray-500 gap-4">
           <p>© 2026 R&K Clinic. Все права защищены.</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <a href="#" className="hover:text-gray-300">Политика конфиденциальности</a>
             <a href="#" className="hover:text-gray-300">Публичная оферта</a>
           </div>
