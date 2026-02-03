@@ -206,7 +206,7 @@ export function DoctorsSection() {
           <DialogContent
             className="max-w-3xl w-[95vw] p-0 gap-0 overflow-hidden border border-border bg-white shadow-xl
               max-h-[90dvh] sm:max-h-[88vh] left-1/2 -translate-x-1/2
-              top-[5vh] sm:top-[50%] sm:-translate-y-1/2
+              top-[5vh] translate-y-0 sm:top-[50%] sm:translate-y-[-50%]
               rounded-2xl data-[state=open]:animate-in data-[state=closed]:animate-out
               [&>button]:hidden [&>button]:md:inline-flex"
           >

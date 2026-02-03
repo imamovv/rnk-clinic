@@ -349,7 +349,7 @@ export default function Home() {
         />
       </div> */}
         
-       <TelegramPostsSection />
+       {/* <TelegramPostsSection /> */}
        <div className="container mx-auto px-4"><YandexReviews /></div>
        
         
