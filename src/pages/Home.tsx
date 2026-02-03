@@ -390,83 +390,83 @@ function ServiceCard({ image, title, description, link }: { image: string, title
 
 import { useState } from "react";
 
-function TelegramPostsSection() {
-  const [current, setCurrent] = useState(0);
-  const totalPosts = TELEGRAM_POSTS.length;
+// function TelegramPostsSection() {
+//   const [current, setCurrent] = useState(0);
+//   const totalPosts = TELEGRAM_POSTS.length;
 
-  return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-secondary/20">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Мы в Telegram</h2>
-          <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-primary mx-auto mb-4 sm:mb-6" />
-          <p className="text-muted-foreground text-sm sm:text-base">
-            Подписывайтесь на наш канал, чтобы быть в курсе новостей, акций и полезных советов по уходу за собой.
-          </p>
-        </div>
+//   return (
+//     <section className="py-12 sm:py-16 lg:py-20 bg-secondary/20">
+//       <div className="container mx-auto px-4">
+//         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+//           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Мы в Telegram</h2>
+//           <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-primary mx-auto mb-4 sm:mb-6" />
+//           <p className="text-muted-foreground text-sm sm:text-base">
+//             Подписывайтесь на наш канал, чтобы быть в курсе новостей, акций и полезных советов по уходу за собой.
+//           </p>
+//         </div>
 
-        {/* Карусель — фиксированная высота на всех экранах (не уменьшается при сужении) */}
-        <div className="relative max-w-2xl mx-auto">
-          <div className="overflow-hidden rounded-2xl shadow-xl border border-border bg-card h-[420px] min-h-[420px]">
-            <div 
-              className="flex transition-transform duration-500 ease-out h-full"
-              style={{ transform: `translateX(-${current * 100}%)` }}
-            >
-              {TELEGRAM_POSTS.map((post) => (
-                <div
-                  key={post}
-                  className="w-full flex-shrink-0 flex items-stretch justify-center p-4 sm:p-6 h-full min-w-0"
-                >
-                  <TelegramPostCardWide post={post} />
-                </div>
-              ))}
-            </div>
-          </div>
+//         {/* Карусель — фиксированная высота на всех экранах (не уменьшается при сужении) */}
+//         <div className="relative max-w-2xl mx-auto">
+//           <div className="overflow-hidden rounded-2xl shadow-xl border border-border bg-card h-[420px] min-h-[420px]">
+//             <div 
+//               className="flex transition-transform duration-500 ease-out h-full"
+//               style={{ transform: `translateX(-${current * 100}%)` }}
+//             >
+//               {TELEGRAM_POSTS.map((post) => (
+//                 <div
+//                   key={post}
+//                   className="w-full flex-shrink-0 flex items-stretch justify-center p-4 sm:p-6 h-full min-w-0"
+//                 >
+//                   <TelegramPostCardWide post={post} />
+//                 </div>
+//               ))}
+//             </div>
+//           </div>
 
-          {/* Стрелки — компактнее на мобиле */}
-          <button
-            onClick={() => setCurrent((prev) => (prev - 1 + totalPosts) % totalPosts)}
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 
-                       w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16
-                       bg-background/95 backdrop-blur-xl rounded-2xl shadow-lg 
-                       hover:bg-primary hover:text-primary-foreground transition-colors duration-300 z-30
-                       flex items-center justify-center text-xl sm:text-2xl lg:text-3xl font-bold
-                       border border-border/50 hover:border-primary/50"
-          >
-            ‹
-          </button>
-          <button
-            onClick={() => setCurrent((prev) => (prev + 1) % totalPosts)}
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 
-                       w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16
-                       bg-background/95 backdrop-blur-xl rounded-2xl shadow-lg 
-                       hover:bg-primary hover:text-primary-foreground transition-colors duration-300 z-30
-                       flex items-center justify-center text-xl sm:text-2xl lg:text-3xl font-bold
-                       border border-border/50 hover:border-primary/50"
-          >
-            ›
-          </button>
+//           {/* Стрелки — компактнее на мобиле */}
+//           <button
+//             onClick={() => setCurrent((prev) => (prev - 1 + totalPosts) % totalPosts)}
+//             className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 
+//                        w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16
+//                        bg-background/95 backdrop-blur-xl rounded-2xl shadow-lg 
+//                        hover:bg-primary hover:text-primary-foreground transition-colors duration-300 z-30
+//                        flex items-center justify-center text-xl sm:text-2xl lg:text-3xl font-bold
+//                        border border-border/50 hover:border-primary/50"
+//           >
+//             ‹
+//           </button>
+//           <button
+//             onClick={() => setCurrent((prev) => (prev + 1) % totalPosts)}
+//             className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 
+//                        w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16
+//                        bg-background/95 backdrop-blur-xl rounded-2xl shadow-lg 
+//                        hover:bg-primary hover:text-primary-foreground transition-colors duration-300 z-30
+//                        flex items-center justify-center text-xl sm:text-2xl lg:text-3xl font-bold
+//                        border border-border/50 hover:border-primary/50"
+//           >
+//             ›
+//           </button>
 
-          {/* Точки */}
-          <div className="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 lg:mt-10">
-            {TELEGRAM_POSTS.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 rounded-full transition-all duration-300 ${
-                  current === i 
-                    ? "bg-primary scale-125 ring-2 ring-primary/30" 
-                    : "bg-muted/70 hover:bg-primary/50"
-                }`}
-                aria-label={`Пост ${i + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+//           {/* Точки */}
+//           <div className="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 lg:mt-10">
+//             {TELEGRAM_POSTS.map((_, i) => (
+//               <button
+//                 key={i}
+//                 onClick={() => setCurrent(i)}
+//                 className={`w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 rounded-full transition-all duration-300 ${
+//                   current === i 
+//                     ? "bg-primary scale-125 ring-2 ring-primary/30" 
+//                     : "bg-muted/70 hover:bg-primary/50"
+//                 }`}
+//                 aria-label={`Пост ${i + 1}`}
+//               />
+//             ))}
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 
 
