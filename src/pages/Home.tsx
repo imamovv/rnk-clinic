@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { YandexMap } from "@/components/ui/map";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 import { ArrowRight, Star, Shield, Heart, Sparkles } from "lucide-react";
-import { TelegramPostWidget } from '@baranov-guru/react-telegram-widgets';
+// import { TelegramPostWidget } from '@baranov-guru/react-telegram-widgets';
 // Asset imports
 import aboutImg from "@/assets/generated_images/modern_luxury_aesthetic_clinic_reception.png";
 import faceImg from "@/assets/generated_images/woman_with_glowing_skin_close_up.png";
@@ -16,13 +16,13 @@ import laserImg from "@/assets/generated_images/modern_laser_cosmetology_equipme
 import { DoctorsSection } from "@/components/sections/DoctorsSection";
 import { YandexReviews } from "@/components/ui/yandexreviewwidget";
 
-const TELEGRAM_POSTS = [
-  "RKclinic/36",
-  "RKclinic/33",
-  "RKclinic/107",
-  "RKclinic/103",
-  "RKclinic/95",
-];
+// const TELEGRAM_POSTS = [
+//   "RKclinic/36",
+//   "RKclinic/33",
+//   "RKclinic/107",
+//   "RKclinic/103",
+//   "RKclinic/95",
+// ];
 export default function Home() {
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -388,7 +388,7 @@ function ServiceCard({ image, title, description, link }: { image: string, title
 }
 
 
-import { useState } from "react";
+// import { useState } from "react";
 
 // function TelegramPostsSection() {
 //   const [current, setCurrent] = useState(0);
@@ -470,33 +470,33 @@ import { useState } from "react";
 
 
 
-interface TelegramPostCardWideProps {
-  post: string;
-}
+// interface TelegramPostCardWideProps {
+//   post: string;
+// }
 
-const TelegramPostCardWide: React.FC<TelegramPostCardWideProps> = ({ post }) => {
-  return (
-    <div className="flex flex-col bg-primary text-white rounded-xl overflow-hidden w-full h-full min-h-0 transition-all duration-300 border border-white/10">
-      {/* Область поста — фиксированная высота за счёт родителя, скролл при переполнении */}
-      <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent">
-        <div className="flex items-start justify-center p-2 sm:p-4 min-h-full [&_iframe]:max-w-full">
-          <TelegramPostWidget post={post} width="100%" dark={true} />
-        </div>
-      </div>
-      {/* Подвал карточки */}
-      <div className="shrink-0 px-3 sm:px-4 py-2.5 sm:py-3 border-t border-white/20 text-xs sm:text-sm text-white/90 flex justify-between items-center gap-2 bg-primary/95">
-        <span className="font-medium truncate">@RKclinic</span>
-        <a
-          href={`https://t.me/${post}`}
-          target="_blank"
-          rel="noreferrer"
-          className="shrink-0 hover:text-white transition-colors font-medium hover:underline flex items-center gap-1"
-        >
-          Открыть в Telegram →
-        </a>
-      </div>
-    </div>
-  );
-};
+// const TelegramPostCardWide: React.FC<TelegramPostCardWideProps> = ({ post }) => {
+//   return (
+//     <div className="flex flex-col bg-primary text-white rounded-xl overflow-hidden w-full h-full min-h-0 transition-all duration-300 border border-white/10">
+//       {/* Область поста — фиксированная высота за счёт родителя, скролл при переполнении */}
+//       <div className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent">
+//         <div className="flex items-start justify-center p-2 sm:p-4 min-h-full [&_iframe]:max-w-full">
+//           <TelegramPostWidget post={post} width="100%" dark={true} />
+//         </div>
+//       </div>
+//       {/* Подвал карточки */}
+//       <div className="shrink-0 px-3 sm:px-4 py-2.5 sm:py-3 border-t border-white/20 text-xs sm:text-sm text-white/90 flex justify-between items-center gap-2 bg-primary/95">
+//         <span className="font-medium truncate">@RKclinic</span>
+//         <a
+//           href={`https://t.me/${post}`}
+//           target="_blank"
+//           rel="noreferrer"
+//           className="shrink-0 hover:text-white transition-colors font-medium hover:underline flex items-center gap-1"
+//         >
+//           Открыть в Telegram →
+//         </a>
+//       </div>
+//     </div>
+//   );
+// };
 
 
