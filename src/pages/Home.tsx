@@ -8,7 +8,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 import { ArrowRight, Star, Shield, Heart, Sparkles } from "lucide-react";
 // import { TelegramPostWidget } from '@baranov-guru/react-telegram-widgets';
 // Asset imports
-import aboutImg from "@/assets/generated_images/clinic_photo.jpg"; 
+import aboutImg from "@/assets/generated_images/clinic_photo.png"; 
 import faceImg from "@/assets/generated_images/woman_with_glowing_skin_close_up.png";
 import injectImg from "@/assets/generated_images/aesthetic_injection_procedure.png";
 import laserImg from "@/assets/generated_images/modern_laser_cosmetology_equipment.png";
