@@ -15,6 +15,7 @@ import laserImg from "@/assets/generated_images/modern_laser_cosmetology_equipme
 
 import { DoctorsSection } from "@/components/sections/DoctorsSection";
 import { YandexReviews } from "@/components/ui/yandexreviewwidget";
+import { MEDICAL_SERVICES } from "@/data/services";
 
 // const TELEGRAM_POSTS = [
 //   "RKclinic/36",
@@ -215,7 +216,7 @@ export default function Home() {
       </section>
 
       {/* Services Accordion Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-secondary/30">
+      <section id="services-accordion" className="py-12 sm:py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Полный спектр медицинских услуг</h2>
@@ -227,77 +228,24 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="cosmetology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
-                  💄 Косметология
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-base text-muted-foreground">
-                  Передовые методы эстетической медицины: инъекционные процедуры, лазерные технологии, SMAS-лифтинг, уходовые процедуры и пилинги для сохранения молодости и красоты.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="dermatology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
-                  🔬 Дерматология
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-base text-muted-foreground">
-                  Диагностика и лечение заболеваний кожи, волос и ногтей. Профессиональное лечение акне, экземы, псориаза и других дерматологических проблем.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="traumatology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
-                  🦴 Травматология
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-base text-muted-foreground">
-                  Специализированное лечение травм, переломов, вывихов и повреждений опорно-двигательного аппарата. Современные методы восстановления и реабилитации.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="destructology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
-                  ✨ Деструстопия
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-base text-muted-foreground">
-                  Инновационные методы удаления бородавок, папиллом и других новообразований кожи с использованием современного оборудования.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="neurology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
-                  🧠 Неврология
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-base text-muted-foreground">
-                  Диагностика и лечение заболеваний нервной системы. Помощь при головных болях, невралгии, нарушениях чувствительности и других неврологических расстройствах.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="endocrinology" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
-                  ⚗️ Эндокринология
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-base text-muted-foreground">
-                  Лечение заболеваний эндокринной системы: сахарного диабета, заболеваний щитовидной железы, нарушений метаболизма и гормональных расстройств.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="ultrasound" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
-                  🔊 УЗИ диагностика
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-base text-muted-foreground">
-                  Современная ультразвуковая диагностика всех органов и систем организма. Высокоточное оборудование позволяет выявить заболевания на ранних стадиях.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="laboratory" className="border-b border-border/50 last:border-0">
-                <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
-                  🧪 Лаборатория (анализы)
-                </AccordionTrigger>
-                <AccordionContent className="pb-4 text-base text-muted-foreground">
-                  Полный спектр лабораторных исследований: клинические анализы, биохимические тесты, анализы на инфекции, гормоны и специализированные исследования.
-                </AccordionContent>
-              </AccordionItem>
+              {MEDICAL_SERVICES.map((service) => (
+                <AccordionItem key={service.slug} value={service.slug} className="border-b border-border/50 last:border-0">
+                  <AccordionTrigger className="py-3 sm:py-4 text-base sm:text-lg font-semibold text-foreground hover:text-primary transition-colors duration-300 data-[state=open]:text-primary">
+                    {service.emoji} {service.title}
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-4 text-base text-muted-foreground">
+                    <p className="mb-4">{service.shortDescription}</p>
+                    <Link href={`/services/${service.slug}`}>
+                      <a>
+                        <Button variant="outline" size="sm" className="rounded-full border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-300">
+                          Подробнее
+                          <ArrowRight className="w-4 h-4 ml-1.5 inline" />
+                        </Button>
+                      </a>
+                    </Link>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
           </div>
         </div>
