@@ -8,7 +8,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/
 import { ArrowRight, Star, Shield, Heart, Sparkles } from "lucide-react";
 // import { TelegramPostWidget } from '@baranov-guru/react-telegram-widgets';
 // Asset imports
-import aboutImg from "@/assets/generated_images/modern_luxury_aesthetic_clinic_reception.png";
+import aboutImg from "@/assets/generated_images/IMG_5946.jpg";
 import faceImg from "@/assets/generated_images/woman_with_glowing_skin_close_up.png";
 import injectImg from "@/assets/generated_images/aesthetic_injection_procedure.png";
 import laserImg from "@/assets/generated_images/modern_laser_cosmetology_equipment.png";
@@ -35,22 +35,34 @@ export default function Home() {
         <div className="absolute inset-0 z-0 hero-silky-bg" />
 
         <div className="relative z-10 container mx-auto px-4 pt-24 sm:pt-28 pb-12 sm:pb-16 lg:pt-28 lg:pb-20 min-h-[70svh] sm:min-h-[75svh] lg:min-h-[600px] flex flex-col lg:flex-row lg:items-center lg:gap-12 xl:gap-16">
-          {/* Левая колонка — весь контент */}
-          <div className="flex-1 flex flex-col justify-center text-left max-w-2xl lg:max-w-none">
-            {/* <div className="relative w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 mb-6 lg:mb-8 shine-wrapper shrink-0">
-              <img src="/rnklogo.svg" alt="R&K Clinic" className="w-full h-full object-contain drop-shadow-2xl" />
-            </div> */}
-            <span className="inline-block py-1 px-3 mb-4 sm:mb-6 border border-white/30 rounded-full text-xs font-medium tracking-widest text-white uppercase backdrop-blur-sm bg-white/10 w-fit">
-              Косметология премиум класса
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6">
-              <span className="block">Когда восстановление</span>
-              <span className="text-[hsl(180,45%,80%)] italic font-serif">становится</span> искусством
-            </h1>
-            <p className="text-base sm:text-lg lg:text-xl text-white/90 mb-6 sm:mb-10 max-w-xl font-light leading-relaxed">
-              R&K CLINIC — это пространство эстетической медицины, где передовые технологии встречаются с заботой о вашей уникальности.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          {/* Левая колонка — логотип по размеру текста (заголовок + абзац), серебристый */}
+          <div className="flex-1 flex flex-col justify-center text-left max-w-2xl lg:max-w-none relative">
+            {/* Блок текста: логотип на заднем плане в размер этого блока */}
+            <div className="relative">
+              {/* Логотип — размером во весь блок текста, серебристый, слегка размыт */}
+              <div className="absolute inset-0 pointer-events-none z-0 select-none flex items-center justify-center">
+                <img
+                  src="/rnklogo.svg"
+                  alt=""
+                  className="w-full h-full max-w-[min(100%,28rem)] max-h-[18rem] sm:max-h-[22rem] lg:max-h-[26rem] object-contain opacity-55"
+                  style={{ filter: 'brightness(2.2) saturate(0) contrast(1.05) blur(3px)' }}
+                  aria-hidden
+                />
+              </div>
+              <div className="relative z-10">
+                <span className="inline-block py-1 px-3 mb-4 sm:mb-6 border border-white/30 rounded-full text-xs font-medium tracking-widest text-white uppercase backdrop-blur-sm bg-white/10 w-fit">
+                  Косметология премиум класса
+                </span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6">
+                  <span className="block">Когда восстановление</span>
+                  <span className="text-[hsl(180,45%,80%)] italic font-serif">становится</span> искусством
+                </h1>
+                <p className="text-base sm:text-lg lg:text-xl text-white/90 mb-6 sm:mb-10 max-w-xl font-light leading-relaxed">
+                  R&K CLINIC — это пространство эстетической медицины, где передовые технологии встречаются с заботой о вашей уникальности.
+                </p>
+              </div>
+            </div>
+            <div className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 sm:px-8 h-12 sm:h-14 text-sm sm:text-base transition-colors duration-300">
                 Записаться на прием
               </Button>
@@ -109,7 +121,55 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+            {/* About Section */}
+            <section className="py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-16">
+            <div className="lg:w-1/2 relative">
+              <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+              <img 
+                src={aboutImg} 
+                alt="Interior" 
+                className="relative rounded-2xl shadow-2xl w-full aspect-[4/3] object-cover"
+              />
+              <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block border border-gray-100">
+                <div className="flex items-center gap-3 mb-2">
+                  <Sparkles className="text-primary w-5 h-5" />
+                  <span className="font-bold text-lg">Premium Quality</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Мы используем только лучшее оборудование и препараты мировых брендов
+                </p>
+              </div>
+            </div>
+            <div className="lg:w-1/2">
+              <span className="text-primary font-medium tracking-widest text-sm uppercase mb-2 block">О клинике</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Добро пожаловать в <br/>R&K CLINIC</h2>
+              <p className="text-muted-foreground text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
+                Наша клиника — это место, где высокие стандарты медицины сочетаются с искусством создания красоты. Мы верим, что каждый человек уникален, и наша задача — подчеркнуть вашу природную красоту, сохранив индивидуальность.
+              </p>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  <span>Лицензированная медицинская деятельность</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  <span>Врачи-эксперты с международной практикой</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  <span>Премиальный сервис и комфорт</span>
+                </li>
+              </ul>
+              <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8">
+                Подробнее о нас
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* Services Section */}
       <section className="py-12 sm:py-16 lg:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
@@ -160,60 +220,8 @@ export default function Home() {
 
       <DoctorsSection />
 
-      {/* About Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-white overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-10 sm:gap-12 lg:gap-16">
-            <div className="lg:w-1/2 relative">
-              <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
-              <img 
-                src={aboutImg} 
-                alt="Interior" 
-                className="relative rounded-2xl shadow-2xl w-full aspect-[4/3] object-cover"
-              />
-              <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl shadow-xl max-w-xs hidden md:block border border-gray-100">
-                <div className="flex items-center gap-3 mb-2">
-                  <Sparkles className="text-primary w-5 h-5" />
-                  <span className="font-bold text-lg">Premium Quality</span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Мы используем только лучшее оборудование и препараты мировых брендов
-                </p>
-              </div>
-            </div>
-            <div className="lg:w-1/2">
-              <span className="text-primary font-medium tracking-widest text-sm uppercase mb-2 block">О клинике</span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">Добро пожаловать в <br/>R&K CLINIC</h2>
-              <p className="text-muted-foreground text-base sm:text-lg mb-4 sm:mb-6 leading-relaxed">
-                Наша клиника — это место, где высокие стандарты медицины сочетаются с искусством создания красоты. Мы верим, что каждый человек уникален, и наша задача — подчеркнуть вашу природную красоту, сохранив индивидуальность.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  <span>Лицензированная медицинская деятельность</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  <span>Врачи-эксперты с международной практикой</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  <span>Премиальный сервис и комфорт</span>
-                </li>
-              </ul>
-              <Button className="bg-primary hover:bg-primary/90 text-white rounded-full px-8">
-                Подробнее о нас
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
-        <div className="container mx-auto px-4">
-          <YandexMap />
-        </div>
-      </section>
+
+
 
       {/* Services Accordion Section */}
       <section id="services-accordion" className="py-12 sm:py-16 lg:py-24 bg-secondary/30">
@@ -252,21 +260,10 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-24 bg-neutral-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 font-serif">Готовы к преображению?</h2>
-          <p className="text-gray-300 text-sm sm:text-base lg:text-lg mb-6 sm:mb-10 max-w-2xl mx-auto">
-            Запишитесь на первичную консультацию, и наши специалисты составят для вас индивидуальный план процедур.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base transition-colors duration-300">
-              Записаться онлайн
-            </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-black rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base backdrop-blur-sm transition-colors duration-300">
-              Заказать звонок
-            </Button>
-          </div>
+
+      <section className="py-12 sm:py-16 lg:py-20 bg-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          <YandexMap />
         </div>
       </section>
       {/* <div className="flex"> 
@@ -300,7 +297,23 @@ export default function Home() {
        {/* <TelegramPostsSection /> */}
        <div className="container mx-auto px-4"><YandexReviews /></div>
        
-        
+       <section className="py-12 sm:py-16 lg:py-24 bg-neutral-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 font-serif">Готовы к преображению?</h2>
+          <p className="text-gray-300 text-sm sm:text-base lg:text-lg mb-6 sm:mb-10 max-w-2xl mx-auto">
+            Запишитесь на первичную консультацию, и наши специалисты составят для вас индивидуальный план процедур.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base transition-colors duration-300">
+              Записаться онлайн
+            </Button>
+            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-black rounded-full px-8 sm:px-10 h-12 sm:h-14 text-sm sm:text-base backdrop-blur-sm transition-colors duration-300">
+              Заказать звонок
+            </Button>
+          </div>
+        </div>
+      </section>        
       <Footer />
     </div>
   );
